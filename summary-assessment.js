@@ -147,7 +147,42 @@ function each(coll, f) {
   // pizza.eatSlice();
   
   // Write your code here .....
-  
+
+
+  function makePizza(crust, size, numberOfSlice){
+    var ingredients = ['tomato', 'sauce', 'cheese'];
+    var cooked = false;
+    return {
+
+      addIngredients: function(ingredient){
+        ingredients.push(ingredient);
+      },
+
+      displayIngredients: function(){
+        return ingredients.join(',');
+      },
+
+      bakePizza: function(){
+        if(cooked)
+          return "Your pizza is already baked!"
+        setTimeout(function(){
+          cooked = true;
+           console.log(`Your ${crust} ${size} ${numberOfSlice} slice pizza is done`)
+        },2000)
+      },
+
+      eatSlice: function(){
+        if(!cooked)
+          return "you can't eat a raw pizza!"
+        if(numberOfSlice>0)
+          return `You took a slice from the pizza, you have ${--numberOfSlice} left!`
+        return 'Oh no, no more pizza!'
+      }
+
+    }
+
+  }
+
   //=============================================================================
   /*                                  Q6                                      */
   //=============================================================================
