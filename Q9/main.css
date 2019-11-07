@@ -1,0 +1,34 @@
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+
+.red {
+	color: red;
+}
+
+.yellow {
+	color: yellow;
+}
+
+.blue {
+	color: blue;
+}
+
+.red.yellow {
+	color: orange;
+}
+
+.red.blue {
+	color: purple;
+}
+
+.yellow.blue {
+	color: green;
+}
+
+.red.yellow.blue {
+	color: black;
+}
