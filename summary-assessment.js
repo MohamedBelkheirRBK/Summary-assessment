@@ -206,9 +206,41 @@ function each(coll, f) {
   */
   
   // Now, to make sure that you are actually reading, make a comment below this and type: Yes I am
-  
+  //how would I solve this without reading though
   // Write your code here .....
   
+  function ReadingList(){
+    return {
+      read: 0,
+      unRead: 0,
+      toRead: [],
+      currentRead: '',
+      readBooks: [],
+
+      addBook: addBook,
+      finishCurrentBook: finishCurrentBook
+    }
+  }
+
+  function addBook(book){
+    this.unRead++;
+    this.toRead.push(book);
+  }
+
+  function finishCurrentBook(){
+    if(this.currentRead!==''){
+      this.read++;
+      this.readBooks.push(this.currentRead);
+    }
+    if(this.unRead>0){
+      this.currentRead = this.toRead.shift();
+      this.unRead--;
+    }
+
+  }
+
+
+
   //=============================================================================
   /*                                  Q7                                       */
   //=============================================================================
@@ -275,4 +307,4 @@ function each(coll, f) {
   // 3- What is jQuery?
   
   // 4- what is the diffrence between Closure's methods and The OOP's methods?
-  
+      }
