@@ -265,7 +265,31 @@ function each(coll, f) {
   
   // Write your code here .....
   
+  function makeSafe(storageSize){
+    var sizes = {
+      'small': 1,
+      'medium': 2,
+      'big': 3,
+    };
+    var storage = [];
 
+    return function(item, size){
+
+      if (storageSize-sizes[size]>=0){
+        storage.push(item);
+        storageSize-= sizes[size];
+      }
+
+      else {
+        return "it won't fit!";
+      }
+
+
+      if(storageSize === 0)
+        return storage.join(' ');
+
+    }
+  }
 
 
   //=============================================================================
