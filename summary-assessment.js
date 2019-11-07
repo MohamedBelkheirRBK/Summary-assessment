@@ -151,7 +151,7 @@ function each(coll, f) {
 
   function makePizza(crust, size, numberOfSlice){
     var ingredients = ['tomato', 'sauce', 'cheese'];
-    var cooked = false;
+    var cooked = false; //boolean to check if the pizza was already cooked or not
     return {
 
       addIngredients: function(ingredient){
@@ -163,18 +163,18 @@ function each(coll, f) {
       },
 
       bakePizza: function(){
-        if(cooked)
+        if(cooked)  //make sure pizza is not already cooked before
           return "Your pizza is already baked!"
         setTimeout(function(){
-          cooked = true;
+          cooked = true; //if it's not, set cooked status to true
            console.log(`Your ${crust} ${size} ${numberOfSlice} slice pizza is done`)
         },2000)
       },
 
       eatSlice: function(){
-        if(!cooked)
+        if(!cooked) //can't allow any food poisoning here
           return "you can't eat a raw pizza!"
-        if(numberOfSlice>0)
+        if(numberOfSlice>0) //make sure we actually have pizza to eat
           return `You took a slice from the pizza, you have ${--numberOfSlice} left!`
         return 'Oh no, no more pizza!'
       }
