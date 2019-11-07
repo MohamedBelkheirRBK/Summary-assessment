@@ -336,10 +336,18 @@ function each(coll, f) {
   //================================================================================
   // Theoretical questions.
   // 1- In your own words,Why do we use Closures ?
-  
+    var answer1 = `In my experience, I found that closures are most useful when you are iterating, creating objects and functions
+                     and would like to keep a reference to each specific variable or object, having to do that without closure would require a lot
+                     of repetitive code to implement, closures saves you a lot of time by being able to keep in memory that specific reference in time`
   // 2- In OOP, what does "this" refer to ?
-  
+    var answer2 = `this keyword refers to the current context the function is in, which is usually the object you added the function to and
+                    called it from`
   // 3- What is jQuery?
-  
+    var answer3 = `jQuery is a library developed to help reduce repetitive code while interacting with the DOM, it revolves around the $jQuery object
+                   which takes either a string or an object. it can either find a specific object or create one. but that alone has no effect until you
+                   run the jquery object methods, which can manipulate the objects you have either in variables or in the DOM`
   // 4- what is the diffrence between Closure's methods and The OOP's methods?
-      }
+    var answer4 = `Closure methods rely on accessing their own scope, having private variables stored in a local scope that only that one function instance
+                   can have access to, but that also means there are more than one function instance. in contrast, OOP methods rely on having the context of
+                   where the variable is, be contained within the object that has called the method itself, allowing you to only need one function instance
+                   to access multiple non-global variables`
