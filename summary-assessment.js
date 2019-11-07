@@ -265,27 +265,31 @@ function each(coll, f) {
   
   // Write your code here .....
   
+
+
   function makeSafe(storageSize){
+    //using an object as a switch to find the numerical value of your size input
     var sizes = {
       'small': 1,
       'medium': 2,
       'big': 3,
     };
+    //array to list everything that did fit
     var storage = [];
 
     return function(item, size){
 
-      if (storageSize-sizes[size]>=0){
-        storage.push(item);
-        storageSize-= sizes[size];
+      if (storageSize-sizes[size]>=0){  //if adding the item will not go above our storage limit
+        storage.push(item);    //add the item into the storage array
+        storageSize-= sizes[size]; //decrement the available storage
       }
 
-      else {
+      else {  //else if it goes above the limit, inform the user we can't fit it
         return "it won't fit!";
       }
 
 
-      if(storageSize === 0)
+      if(storageSize === 0) //if we completely fill the storage, return the contents
         return storage.join(' ');
 
     }
