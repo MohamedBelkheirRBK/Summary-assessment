@@ -58,8 +58,11 @@ function each(coll, f) {
   //solve it using the most appropriate helper functions(reduce,each,map,filter).
   //wordLengths("hello its me") // [5,3,2]
   
+  //we solve this by first splitting the string into an array of words, splitting at the empty space between them
+  //then we use the map function on the returned array to make a copy that contains the length of each element
+  
   function wordLengths(str) {
-      // TODO: your code here 
+      return str.split(' ').map(function(element){return element.length;}) 
   }
   
   //=============================================================================
