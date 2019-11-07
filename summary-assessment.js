@@ -76,6 +76,9 @@ function each(coll, f) {
   // countOccurrences("hello", "l"); // 2
   // countOccurrences("hello, world!", "l"); // 3
   
+  //Solved this by splitting the string into characters, and then using the reduce function, starting the acculumator with 0
+  //each time the element in the split array is equal to the inputed character we increment the accumulator
+
   function countOccurrences(string, character) {
       return string.split('').reduce(function(acc, char){
         if(char === character)
@@ -92,8 +95,12 @@ function each(coll, f) {
   //solve it using the most appropriate helper functions(reduce,each,map,filter).
   // wordsLongerThanThree("Hello Mad World") //["Hello", "World"]
   
+  //Again, split the array, and then using filter, we check for the elements that satisfy our > 3 condition
+
   function wordsLongerThanThree(str) {
-      // TODO: your code here 
+      return str.split(' ').filter(function(element){
+        return element.length>3;
+      })
   }
   
   //=============================================================================
