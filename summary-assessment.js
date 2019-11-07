@@ -209,6 +209,9 @@ function each(coll, f) {
   //how would I solve this without reading though
   // Write your code here .....
   
+
+  //code explains itself here
+
   function ReadingList(){
     return {
       read: 0,
@@ -222,19 +225,20 @@ function each(coll, f) {
     }
   }
 
+
   function addBook(book){
     this.unRead++;
     this.toRead.push(book);
   }
 
   function finishCurrentBook(){
-    if(this.currentRead!==''){
-      this.read++;
-      this.readBooks.push(this.currentRead);
+    if(this.currentRead!==''){ //if there is an actual book we're currently reading
+      this.read++;             //increase the read counter
+      this.readBooks.push(this.currentRead);  //and book the book we were reading to the read books array
     }
-    if(this.unRead>0){
-      this.currentRead = this.toRead.shift();
-      this.unRead--;
+    if(this.unRead>0){ //check if we actually have books to read
+      this.currentRead = this.toRead.shift(); //take the first book in the queue of toread books and place it in the currentRead function
+      this.unRead--; //decrement the unread counter
     }
 
   }
@@ -261,6 +265,9 @@ function each(coll, f) {
   
   // Write your code here .....
   
+
+
+
   //=============================================================================
   /*                                  Q8                                       */
   //=============================================================================
