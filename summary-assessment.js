@@ -60,9 +60,11 @@ function each(coll, f) {
   
   //we solve this by first splitting the string into an array of words, splitting at the empty space between them
   //then we use the map function on the returned array to make a copy that contains the length of each element
-  
+
   function wordLengths(str) {
-      return str.split(' ').map(function(element){return element.length;}) 
+      return str.split(' ').map(function(element){
+        return element.length;
+      }) 
   }
   
   //=============================================================================
@@ -75,7 +77,11 @@ function each(coll, f) {
   // countOccurrences("hello, world!", "l"); // 3
   
   function countOccurrences(string, character) {
-      // your code is here
+      return string.split('').reduce(function(acc, char){
+        if(char === character)
+          acc++;
+        return acc;
+      }, 0)
   }
   
   //=============================================================================
